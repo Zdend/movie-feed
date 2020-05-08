@@ -6,7 +6,7 @@ describe('BasicLayout', () => {
   let getByTestId;
   beforeEach(() => {
     ({ getByTestId } = render(
-      <BasicLayout title="Hello title" titleExtension="I am extension">
+      <BasicLayout title="Hello title">
         <span>Layout content</span>
       </BasicLayout>
     ));
@@ -14,10 +14,6 @@ describe('BasicLayout', () => {
 
   it('renders title', () => {
     expect(getByTestId('basic-layout__title').textContent).toContain('Hello title');
-  });
-
-  it('renders title extension', () => {
-    expect(getByTestId('basic-layout__title').textContent).toContain('I am extension');
   });
 
   it('renders content', () => {
