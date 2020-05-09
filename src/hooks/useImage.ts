@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 
 type UseImageResult = [boolean, string?];
 
+/**
+ * Loads an image and returns a state of loading.
+ * Useful when displaying a fallback image.
+ */
 export const useImage = (src?: string): UseImageResult => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
