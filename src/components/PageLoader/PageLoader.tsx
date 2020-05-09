@@ -11,8 +11,6 @@ const PageLoaderStyled = styled.div<Omit<PageLoaderProps, 'children'>>`
   display: flex;
   font-size: 1.5rem;
   font-weight: 600;
-  align-items: center;
-  justify-content: center;
 
   ${({ inline }) =>
     !inline
@@ -24,6 +22,8 @@ const PageLoaderStyled = styled.div<Omit<PageLoaderProps, 'children'>>`
     bottom: 0;
     left: 0;
     right: 0;
+    align-items: center;
+    justify-content: center;
   `
       : ''}
 `;
@@ -31,7 +31,7 @@ const PageLoaderStyled = styled.div<Omit<PageLoaderProps, 'children'>>`
 const PageLoader = ({ children, ...rest }: PageLoaderProps) => {
   return (
     <PageLoaderStyled {...rest}>
-      <div className="ml-2">{children || 'Loading...'}</div>
+      {children || 'Loading...'}
     </PageLoaderStyled>
   );
 };

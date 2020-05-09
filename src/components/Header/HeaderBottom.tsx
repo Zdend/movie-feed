@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { COLORS, SHADES, GRADIENTS } from '@/shared/theme';
+import { COLORS, SHADES, GRADIENTS, SHADOWS } from '@/shared/theme';
 import ContentBox from '../ContentBox';
 
 const HeaderBottomWrapper = styled.div`
@@ -8,6 +8,7 @@ const HeaderBottomWrapper = styled.div`
   background-image: ${GRADIENTS.DARK};
   background-color: ${COLORS.DARK[5]};
   color: ${SHADES.WHITE};
+  box-shadow: ${SHADOWS.BOTTOM_MEDIUM};
 `;
 
 interface HeaderBottomProps {

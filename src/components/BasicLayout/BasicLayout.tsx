@@ -10,14 +10,6 @@ const PageWrapper = styled.div`
   min-height: 100%;
 `;
 
-const PageContent = styled.div`
-  flex-grow: 1;
-  padding: 1rem;
-  display: flex;
-  margin-top: 2rem;
-  justify-content: center;
-`;
-
 interface BasicLayoutProps {
   title: string;
   children: React.ReactNode;
@@ -31,11 +23,9 @@ const BasicLayout = ({
   return (
     <PageWrapper {...rest}>
       <Header title={title} data-testid="basic-layout__header" />
-      <PageContent data-testid="basic-layout__content">
-        <ContentBox>
-          {children}
-        </ContentBox>
-      </PageContent>
+      <ContentBox className="flex-grow" data-testid="basic-layout__content">
+        <main>{children}</main>
+      </ContentBox>
       <Footer />
     </PageWrapper>
   );

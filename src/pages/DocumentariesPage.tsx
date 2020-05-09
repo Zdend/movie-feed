@@ -5,8 +5,8 @@ import { ProgramType } from '@/types/feed';
 
 export default () => {
   return (
-    <BasicLayout title="Popular Movies">
-      <TitleFeed type={ProgramType.MOVIE} />
+    <BasicLayout title="Documentaries">
+      <TitleFeed type={ProgramType.DOCUMENTARY} />
     </BasicLayout>
   );
 };

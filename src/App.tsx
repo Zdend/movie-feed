@@ -7,7 +7,10 @@ import PageLoader from '@/components/PageLoader';
 const lazyComponent = (importFn: () => Promise<{ default: React.ComponentType<any> }>) =>
   React.lazy<React.ComponentType<RouteComponentProps>>(importFn);
 
-const Home = lazyComponent(() => import('@/pages/HomePage'));
+const HomePage = lazyComponent(() => import('@/pages/HomePage'));
+const MoviesPage = lazyComponent(() => import('@/pages/MoviesPage'));
+const SeriesPage = lazyComponent(() => import('@/pages/SeriesPage'));
+const DocumentariesPage = lazyComponent(() => import('@/pages/DocumentariesPage'));
 
 function App() {
   return (
@@ -15,7 +18,10 @@ function App() {
       <Global styles={globalStyles} />
       <Suspense fallback={<PageLoader />}>
         <Router className="h-full">
-          <Home path="/" />
+          <HomePage path="/" />
+          <MoviesPage path="/movies" />
+          <SeriesPage path="/series" />
+          <DocumentariesPage path="/documentaries" />
         </Router>
       </Suspense>
     </>
