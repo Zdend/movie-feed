@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { SHADES, COLORS, GRADIENTS, BREAKPOINT, SHADOWS } from '@/shared/theme';
-import ContentBox from '../ContentBox';
 import { Link } from '@reach/router';
 import { css } from '@emotion/core';
+import { SHADES, COLORS, GRADIENTS, BREAKPOINT, SHADOWS } from '@/shared/theme';
+import ContentBox from '../ContentBox';
 
 const HeaderTopWrapper = styled.nav`
   display: flex;
@@ -22,15 +22,16 @@ const headerTopBrandStyle = css`
   font-weight: 800;
   text-decoration: none;
   color: ${SHADES.WHITE};
-  
-  &:hover, &:focus {
+
+  &:hover,
+  &:focus {
     color: ${COLORS.GREY[0]};
   }
 
-  @media (max-width: ${BREAKPOINT.sm}) { 
+  @media (max-width: ${BREAKPOINT.sm}) {
     font-size: 1.6rem;
   }
-  @media (max-width: ${BREAKPOINT.xs}) { 
+  @media (max-width: ${BREAKPOINT.xs}) {
     font-size: 1.4rem;
   }
 `;
@@ -53,14 +54,17 @@ const HeaderTopActionsItem = styled.a<{ highlight?: boolean }>`
   &:last-of-type {
     margin-right: 0;
   }
-  ${({ highlight }) => highlight ? `
+  ${({ highlight }) =>
+    highlight
+      ? `
     background-image: ${GRADIENTS.DARK};
     background-color: ${COLORS.DARK[5]};
     &:hover, &:focus {
       background-color: ${COLORS.DARK[6]};
       background-image: none;
     }
-  `: `
+  `
+      : `
     &:hover, &:focus {
       background-color: ${COLORS.PRIMARY[7]};
     }
@@ -76,11 +80,12 @@ const HeaderTopActionsItem = styled.a<{ highlight?: boolean }>`
 `;
 
 const HeaderTop = () => {
-
   return (
     <HeaderTopWrapper>
       <ContentBox className="items-center">
-        <Link to="/" css={headerTopBrandStyle}>DEMO Streaming</Link>
+        <Link to="/" css={headerTopBrandStyle}>
+          DEMO Streaming
+        </Link>
         <HeaderTopActions>
           <HeaderTopActionsItem>Log in</HeaderTopActionsItem>
           <HeaderTopActionsItem highlight>Start your free trial</HeaderTopActionsItem>

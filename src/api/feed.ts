@@ -2,17 +2,18 @@ import { FeedResponse, ProgramType } from '@/types/feed';
 
 const FEED_ENDPOINT = '/api/feed.json';
 
-export const simulateError = () => new Promise((_, reject) => {
-  setTimeout(reject, 1000, {
-    message: 'Program type "Documentaries" not found',
-    code: 'DOC_404'
+export const simulateError = () =>
+  new Promise((_, reject) => {
+    setTimeout(reject, 1000, {
+      message: 'Program type "Documentaries" not found',
+      code: 'DOC_404'
+    });
   });
-});
 
 export const fetchFeed = async (
-  type: ProgramType, 
-  limit: number = 21, 
-  releasedSince: number = 2010,
+  type: ProgramType,
+  limit: number = 21,
+  releasedSince: number = 2010
 ): Promise<FeedResponse> => {
   if (type === ProgramType.DOCUMENTARY) {
     throw await simulateError();
@@ -26,8 +27,10 @@ export const fetchFeed = async (
     })
     .sort((a, b) => a.title.localeCompare(b.title));
 
-  return new Promise((resolve) => setTimeout(resolve, 1000, {
-    total: filteredTitles.length,
-    entries: filteredTitles.slice(0, limit)
-  }));
-}
+  return new Promise(resolve =>
+    setTimeout(resolve, 1000, {
+      total: filteredTitles.length,
+      entries: filteredTitles.slice(0, limit)
+    })
+  );
+};

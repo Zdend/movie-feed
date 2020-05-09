@@ -1,5 +1,5 @@
-import { ProgramType, FeedResponse } from '@/types/feed';
 import { useState, useEffect } from 'react';
+import { ProgramType, FeedResponse } from '@/types/feed';
 import { fetchFeed } from '@/api/feed';
 
 interface FeedResult {
@@ -25,11 +25,11 @@ export const useFeed = (type: ProgramType, limit?: number, releasedSince?: numbe
       }
       setLoading(false);
     })();
-  }, [type, limit, releasedSince])
+  }, [type, limit, releasedSince]);
 
   return {
     loading,
     error,
-    data: feed,
+    data: feed
   };
 };

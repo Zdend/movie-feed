@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-export const useImage = (src?: string) => {
+type UseImageResult = [boolean, string?];
+
+export const useImage = (src?: string): UseImageResult => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -14,13 +16,11 @@ export const useImage = (src?: string) => {
         setImageLoaded(true);
       }
     };
+    // eslint-disable-next-line consistent-return
     return () => {
       image.onload = null;
-    }
+    };
   }, [src]);
 
-  return [
-    imageLoaded,
-    src,
-  ]
-}
+  return [imageLoaded, src];
+};

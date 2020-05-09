@@ -12,11 +12,7 @@ interface HeaderProps {
   title: string;
 }
 
-const Header = ({
-  title,
-  ...rest
-}: HeaderProps) => {
-
+const Header = ({ title, ...rest }: HeaderProps) => {
   return (
     <HeaderWrapper {...rest}>
       <HeaderTop />

@@ -14,15 +14,14 @@ const titleTileStyle = css`
   flex: 0 1 auto;
   transition: all 200ms ease;
   width: 165px;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     transform: scale(1.05);
   }
 `;
 
 const TitleTilePoster = styled.div<{ src: string }>`
-${({ 
-  src, 
-}) => `
+  ${({ src }) => `
   background-image: url(${src});
   background-color: ${COLORS.DARK[6]};
 `}
@@ -57,15 +56,10 @@ interface TitleTileProps {
   imageUrl?: string;
 }
 
-const TitleTile = ({ 
-  to,
-  imageUrl,
-  title,
-  children,
-}: TitleTileProps) => {
+const TitleTile = ({ to, imageUrl, title, children }: TitleTileProps) => {
   const [loaded] = useImage(imageUrl);
   return (
-    <Link to={to} css={titleTileStyle}>
+    <Link to={to} css={titleTileStyle} data-testid="title-tile">
       <TitleTilePoster src={loaded ? imageUrl : Placeholder}>{title}</TitleTilePoster>
       <TitleTileSubtitle>{children}</TitleTileSubtitle>
     </Link>

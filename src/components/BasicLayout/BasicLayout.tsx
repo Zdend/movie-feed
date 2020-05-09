@@ -15,18 +15,14 @@ interface BasicLayoutProps {
   children: React.ReactNode;
 }
 
-const BasicLayout = ({
-  title,
-  children,
-  ...rest
-}: BasicLayoutProps) => {
+const BasicLayout = ({ title, children, ...rest }: BasicLayoutProps) => {
   return (
     <PageWrapper {...rest}>
       <Header title={title} data-testid="basic-layout__header" />
       <ContentBox className="flex-grow" data-testid="basic-layout__content">
         <main>{children}</main>
       </ContentBox>
-      <Footer />
+      <Footer data-testid="basic-layout__footer" />
     </PageWrapper>
   );
 };

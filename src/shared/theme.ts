@@ -7,12 +7,12 @@ export const COLORS = {
   WARNING: generate('#FF9800'),
   INFO: generate('#2196F3'),
   GREY: generate('#a5adb7'),
-  DARK: generate('#414141'),
+  DARK: generate('#414141')
 };
 
 export const GRADIENTS = {
   PRIMARY: 'linear-gradient(to bottom, #09f 0, #06f 100%)',
-  DARK: 'linear-gradient(to bottom, #444 0, #333 100%)',
+  DARK: 'linear-gradient(to bottom, #444 0, #333 100%)'
 };
 
 export const SHADES = {

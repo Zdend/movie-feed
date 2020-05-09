@@ -5,9 +5,7 @@ interface GenericErrorProps {
 }
 
 const GenericError = (props: GenericErrorProps) => {
-  return (
-    <div {...props}>Oops, something went wrong...</div>
-  );
+  return <div {...props}>Oops, something went wrong...</div>;
 };
 
 export default GenericError;

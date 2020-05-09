@@ -1,7 +1,7 @@
 export enum ProgramType {
   SERIES = 'series',
   MOVIE = 'movie',
-  DOCUMENTARY = 'documentary',
+  DOCUMENTARY = 'documentary'
 }
 
 export interface TitleImage {

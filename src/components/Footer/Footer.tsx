@@ -18,11 +18,12 @@ const FooterNavigationItem = styled.a`
   cursor: pointer;
   font-size: 0.8rem;
   text-decoration: none;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: ${COLORS.GREY[3]};
   }
   &:not(:last-of-type):after {
-    content: "|";
+    content: '|';
     display: inline-block;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -48,7 +49,7 @@ const FooterBadges = styled.div`
 const FooterBadgePanel = styled.div`
   flex: 1 1 auto;
   display: flex;
-  
+
   @media (max-width: ${BREAKPOINT.sm}) {
     width: 100%;
     justify-content: center;
@@ -56,13 +57,13 @@ const FooterBadgePanel = styled.div`
   }
 `;
 
-const FooterBadge = styled.div<{ src: string, srcAlternate?: string, width?: string, height?: string }>`
-  ${({ 
-    src, 
-    srcAlternate,
-    width = '40px', 
-    height = '35px' 
-  }) => `
+const FooterBadge = styled.div<{
+  src: string;
+  srcAlternate?: string;
+  width?: string;
+  height?: string;
+}>`
+  ${({ src, srcAlternate, width = '40px', height = '35px' }) => `
     background-image: url(${process.env.PUBLIC_URL}/images/${src});
     background-repeat: no-repeat;
     background-position: center center;
@@ -83,10 +84,9 @@ const FooterBadge = styled.div<{ src: string, srcAlternate?: string, width?: str
   `}
 `;
 
-const Footer = () => {
-
+const Footer = props => {
   return (
-    <FooterWrapper>
+    <FooterWrapper {...props}>
       <ContentBox className="py-10 flex flex-col">
         <FooterNavigation>
           <FooterNavigationItem>Home</FooterNavigationItem>
@@ -101,7 +101,10 @@ const Footer = () => {
           <FooterBadgePanel>
             <FooterBadge src="social/facebook-white.svg" srcAlternate="social/facebook-blue.svg" />
             <FooterBadge src="social/twitter-white.svg" srcAlternate="social/twitter-blue.svg" />
-            <FooterBadge src="social/instagram-white.svg" srcAlternate="social/instagram-blue.svg" />
+            <FooterBadge
+              src="social/instagram-white.svg"
+              srcAlternate="social/instagram-blue.svg"
+            />
           </FooterBadgePanel>
           <FooterBadgePanel className="justify-end">
             <FooterBadge src="store/app-store.svg" width="120px" />

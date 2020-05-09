@@ -15,9 +15,7 @@ interface HeaderBottomProps {
   title: string;
 }
 
-const HeaderBottom = ({
-  title
-}: HeaderBottomProps) => {
+const HeaderBottom = ({ title }: HeaderBottomProps) => {
   return (
     <HeaderBottomWrapper>
       <ContentBox className="items-center">

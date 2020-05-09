@@ -29,11 +29,7 @@ const PageLoaderStyled = styled.div<Omit<PageLoaderProps, 'children'>>`
 `;
 
 const PageLoader = ({ children, ...rest }: PageLoaderProps) => {
-  return (
-    <PageLoaderStyled {...rest}>
-      {children || 'Loading...'}
-    </PageLoaderStyled>
-  );
+  return <PageLoaderStyled {...rest}>{children || 'Loading...'}</PageLoaderStyled>;
 };
 
 export default PageLoader;

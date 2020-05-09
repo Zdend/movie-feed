@@ -7,9 +7,15 @@ export default () => {
   return (
     <BasicLayout title="Popular Titles">
       <TileLayout>
-        <TitleTile to="/series" title="SERIES">Popular Series</TitleTile>
-        <TitleTile to="/movies" title="MOVIES">Popular Movies</TitleTile>
-        <TitleTile to="/documentaries" title="DOC">Documentaries</TitleTile>
+        <TitleTile to="/series" title="SERIES">
+          Popular Series
+        </TitleTile>
+        <TitleTile to="/movies" title="MOVIES">
+          Popular Movies
+        </TitleTile>
+        <TitleTile to="/documentaries" title="DOC">
+          Documentaries
+        </TitleTile>
       </TileLayout>
     </BasicLayout>
   );
