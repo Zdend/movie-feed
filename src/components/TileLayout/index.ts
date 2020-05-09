@@ -8,9 +8,8 @@ const TileLayout = styled.div`
   flex-flow: wrap;
   justify-content: flex-start;
 
-  & > :not(:last-of-type) {
-    margin-left: 1rem;
-    margin-bottom: 2rem;
+  & > * {
+    margin: 0.5rem;
   }
   @media (max-width: ${BREAKPOINT.lg}) {
     justify-content: space-evenly;
